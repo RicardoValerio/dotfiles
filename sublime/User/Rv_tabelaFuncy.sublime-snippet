@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+
+	<table border="1" cellspacing="2" cellpadding="2" width="800">
+		<tr>
+			<!-- 3 td's -->
+			<td rowspan="2"></td>
+			<td colspan="2">Votos</td>
+			<!-- <td></td> -->
+			<td colspan="2">Delegados</td>
+		</tr>
+		<tr>
+			<!-- 4 td's -->
+			<!-- <td></td> -->
+			<td>Lista A</td>
+			<td>Lista B</td>
+			<td>Lista A</td>
+			<td>Lista B</td>
+		</tr>
+		<tr>
+			<!-- 5 td's -->
+			<td>Lisboa</td>
+			<td>23</td>
+			<td>39</td>
+			<td>23</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<!-- 5 td's -->
+			<td>Porto</td>
+			<td>34</td>
+			<td>12</td>
+			<td>39</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<!-- 5 td's -->
+			<td>Coimbra</td>
+			<td>45</td>
+			<td>23</td>
+			<td>12</td>
+			<td>39</td>
+		</tr>
+
+
+	</table>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_tabelaFuncy</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+
+// FUNCTIONS TO MANAGE SESSIONS ///////////////////////////////
+
+#   session_name( [nome_da_sessao] ) --> gets the name of the session cookie. 
+#                                        the default is PHPSESSID;
+#   session_id( [valor_da_sessao] ) -->  if the parameter isn't specified, this
+#                                    function gets the current session ID. if no session existis, 
+#                                    this function gets the empty string. if the parameter is
+#                                    specified, this function sets the session ID to the specified
+#                                    value;
+#    session_write_close() -->    ends the current session and saves session data. this function is
+#                            only needed in special cases like redirects.
+#   session_regenerate_id() --> creates a new session ID for the current session. returns TRUE if
+#                            successful and FALSE otherwise. this function can be used to help
+#                            prevent session hijacking.
+
+// GET THE NAME OF THE SESSION COOKIE //////////////////////////////////////////////////
+
+\$name = session_name(); 
+
+//SET THE SESSION NAME //////////////////////////////////////////////////////////
+
+session_name('RV');
+
+// GET THE VALUE OF THE SESSION ID ////////////////////////////////////////////////
+
+\$id = session_id();    // por exemplo: 1c8qp47qn92gg9m73rnqlgt4j4
+
+// SET THE SESSION ID ////////////////////////////////////////////////////////////
+
+session_id('abc123');
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>RV_manage_sessions_PHP</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

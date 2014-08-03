@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+if (${1:expression}):
+    #go Ricardo go xD
+?>
+<?php
+elseif ( ):
+    #go Ricardo go xD
+?>
+<?php
+else:
+    #go Ricardo go xD
+endif;
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_ifelse_PHPalternative</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

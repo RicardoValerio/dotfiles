@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+
+// SET A VARIABLE IN A SESSION /////////////////////////////
+
+\$_SESSION['product_code'] = 'MBZ-1342';
+
+// GET A VARIABLE FROM A SESSION //////////////////////////
+
+\$product_code = \$_SESSION['product_code'];
+
+
+
+// SET AN ARRAY IN A SESSION //////////////////////////////
+
+if ( !isset(\$_SESSION['cart']) )
+{
+    \$_SESSION['cart'] = array();
+}
+
+// ADD AN ELEMENT TO AN ARRAY THAT'S STORED IN A SESSION //////////
+
+\$_SESSION['cart']['key1'] = 'value1';
+\$_SESSION['cart']['key2'] = 'value2';
+
+// GET AND USE AN ARRAY THAT'S STORED IN A SESSION ////////////////
+
+\$cart = \$_SESSION['cart'];
+foreach(\$cart as \$item){
+echo '<li>' . \$item . '</li>';
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_set_get_sessions_PHP</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

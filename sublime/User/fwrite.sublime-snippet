@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+// fwrite retorna o numero de itens que conseguir escrever com sucesso
+// e não o numero de bytes - atenção!
+if ( fwrite(${1:"de onde vem os dados?"}, sizeof(${2:"tamanho de cada dado?"}), ${3:"total de dados a escrever?"}, ${4:"em que FILE * irão ser escritos?"}) != ${3:"total de dados a escrever"} ) 
+ 	{
+ 		fprintf(stderr, "Nao foram escritos todos os elementos no aquivo! \n");
+ 	}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fwrite</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

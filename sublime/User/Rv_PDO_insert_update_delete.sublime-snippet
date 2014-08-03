@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+
+////////////////////////////////////////////////////////////////
+//INSERT, UPDATE, DELETE usamos o metodo exec() do objecto PDO
+// Este metodo executa o sql e retorna o numero de linhas afectadas
+// Caso nenhuma seja afectada retorna ZERO. Pode portanto ter o mesmo 
+// efeito que falso e usarmos dentro de um IfElse
+
+
+
+//INSERT
+\$sql = "INSERT INTO ";
+
+if(\$insert_count = \$connection->exec(\$sql)){
+    echo 'Numero de rows afectadas: ' . \$insert_count;
+}else{
+    echo 'Nenhuma row afectada!';
+}
+    
+
+
+//UPDATE
+\$sql = "UPDATE ";
+
+if(\$update_count = \$connection->exec(\$sql)){
+    echo 'Numero de rows afectadas: ' . \$update_count;
+}else{
+    echo 'Nenhuma row afectada!';
+}
+    
+
+
+//DELETE
+\$sql = "DELETE FROM ";
+
+if(\$delete_count = \$connection->exec(\$sql)){
+    echo 'Numero de rows afectadas: ' . \$delete_count;
+}else{
+    echo 'Nenhuma row afectada!';
+}
+  
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_PDO_insert_update_delete</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

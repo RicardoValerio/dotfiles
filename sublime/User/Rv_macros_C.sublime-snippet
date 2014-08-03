@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+
+//As macros são porções de código que são substituídas 
+//pelo pré-processador, antes mesmo de o compilador passar pelo código.
+// Em geral, o termo Macro refere-se a chamada a "funções" que são
+// substituídas por outro código pelo Pré-processador.
+// Nunca são escrita com ponto e vírgula no final!...
+
+// cada macro tem de ser escrita numa única linha. Se houver necessidade
+// de escrever por várias linhas, deve-se colocar o operador de continuidade
+// das macros "\" no final de cada linha a continuar.
+
+
+/*******************
+*	REGRAS PARA A COLOCAÇÃO DE PARÊNTESES:
+*
+*	-Numa macro são sempre colocados 3 níveis de parenteses:
+*	
+*	1) em volta de cada um dos parâmetros existentes na expansão da macro..
+*	2) em volta de cada expressão.
+*	3) em volta de toda a macro.
+*	
+*	exemplo: #define Min(x,y) (((x) < (y)) ? (x) : (y))
+********************/
+
+// a abertura dos parênteses dos parâmetros terá que ficar
+// imediatamente após o nome da macro, isto é, não pode haver espaços
+#define ${1:NOME_DA_MACRO}(x,y) ${2:(((x) < (y)) ? (x) : (y))}
+
+
+
+/*		OPERADOR DE CONCATENAÇÃO DE STRINGS EM MACROS - ##
+
+exemplo:
+
+#define VAR(variavel)	n##variavel	
+
+int main(const int argc, const char *argv[])
+{
+	int n1=400;
+	printf("%d\n", VAR(1));
+
+*/
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_macros</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

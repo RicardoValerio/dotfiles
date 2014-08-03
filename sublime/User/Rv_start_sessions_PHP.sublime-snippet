@@ -1,0 +1,46 @@
+<snippet>
+	<content><![CDATA[
+
+// THE PARAMETERS OF THE session_set_cookie_params FUNCTION /////////////////////////////
+
+#   \$lifetime --> the lifetime of the session cookie in seconds. the default is zero.
+#                Is th eonly required parameter.
+#   \$path -->   the path on the server the cookie is available to. the default is
+#            the current directory of the script that is setting the cookie.
+#   \$domain -->  the domain that the cookie is available to. the default is 
+#              the name of the server that is setting the cookie.
+#   \$secure -->  if TRUE, the cookie is available only if it is sent using HTTPS.
+#                the default is FALSE.
+#   \$httponly -->  if TRUE, the cookie is only available through the HTTP protocol
+#                and not through client-side scripting languages such as Javascript.
+#                    the default is FALSE.
+
+// THE SYNTAX OF THE session_set_cookie_params FUNCTION /////////////////////////////////
+
+//   session_set_cookie_params( \$lifetime, \$path, \$domain, \$secure, \$httponly );
+
+#########################################################################################
+
+// A FUNCTION TO START A SESSION ///////////////////////////////////
+
+#   session_start() --> starts a new session or resumes a previous session. return TRUE if 
+#                    successful and FALSE otherwise. this function must be called before
+#                    the page sends any HTML output to your application.
+
+// START A SESSION WITH THE DEFAULT COOKIE PARAMETERS ////////////////////
+
+session_start();
+
+// START A SESSION WITH CUSTOM COOKIE PARAMETERS /////////////////////
+
+\$lifetime = 60 * 60 * 24 * 365;  // 1 ano
+session_set_cookie_params( \$lifetime, '/' ); // must be call before session_start()
+session_start();
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_start_sessions_PHP</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

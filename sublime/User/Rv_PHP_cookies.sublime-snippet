@@ -1,0 +1,47 @@
+<snippet>
+	<content><![CDATA[
+
+// THE SYNTAX OF THE SETCOOKIE FUNCTION ///////////////////////////
+
+// setcookie( \$name, \$value, \$expire, \$path, \$domain, \$secure, \$httponly );
+
+// THE PARAMETERES OF THE SETCOOKIE FUNCTION //////////////////////////////////////////////////
+
+#   \$name --> the name of the cookie;
+#   \$value --> the value of the cookie. the default is the empty string;
+#   \$expire --> the expiration date of the cookie as a timestamp. if set to zero
+#            the cookie expires when the user closes the browser. the default is zero;
+#   \$path -->   the path on the server that the cookie is available to. if set to '/', #the
+#            cookie is available to all directories on the current server. the default is
+#            the directory of the PHP file that's setting the cookie;
+#   \$domain --> the domain that the cookie is available to. the default is the name of the server
+#            that's setting the cookie;
+#   \$secure --> if TRUE, the cookie is available only if it is sent using HTTPS. the default is FALSE;
+#   \$httponly --> if TRUE, the cookie is only made available through the HTTP protocol and not through
+#              cliente-side scripting languages such as Javascript. the default is FALSE
+              
+// SET COOKIE IN THE BROWSER //////////////////////////////////////////////////////
+
+\$name = 'nome_da_cookie';
+\$value = 'valor_da_cookie';
+\$expire = strtotime('+1 year'); // um ano
+\$path = '/'; 
+
+setcookie(\$name, \$value, \$expire, \$path);
+
+// GETS THE VALUE OF A COOKIE FROM THE BROWSER //////////////////////////////////
+
+\$var = \$_COOKIE['nome_da_cookie'];
+
+// DELETE A COOKIE FROM THE BROWSER /////////////////////////////////////////////
+
+\$expire = strtotime('-1 year');
+setcookie('nome_da_cookie', '', \$expire, '/' );  //segundo parametro = empty string    
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_PHP_cookies</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

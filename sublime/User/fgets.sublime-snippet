@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+fgets(${1:char_array}, sizeof(${1:char_array}), stdin);${2:}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fgets</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

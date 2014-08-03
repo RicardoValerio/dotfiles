@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+for (${1:expr1}; ${2:expr2}; ${3:expr3}):
+    ${4://statement}
+?>
+<?php
+endfor;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_for_PHPalternative</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

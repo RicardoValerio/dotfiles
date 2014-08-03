@@ -1,0 +1,82 @@
+<snippet>
+	<content><![CDATA[
+
+/******************************************************
+*			Modos de Abertura de Arquivos
+*******************************************************/
+/* "r" -> read(abertura do arquivo para leitura)
+*		Abre o arquivo para leitura. Caso não possa abrir, 
+*		(por não existir ou por não ter permissão para tal)
+*		a função devolve NULL.
+*  "w"	-> write(abertura do aquivo para escrita)
+*		se já existir um aquivo com o mesmo nome, esse arquivo
+*		é apagado e substituido pelo novo com a nova informação.
+*		Caso não possa criá-lo, a função devolve NULL.
+*  "a"  -> append(abertura para acrescentar)
+*		se não existir é criado e funciona tal e qual o modo "w".
+*		se já existir, coloca o cursor no final da stream, de modo
+*		a poder acrescentar informação.		
+*_________________________________________________________________
+*___É ainda possível abrir um arquivo em modo de leitura e escrita:
+* 
+*	"r+" -> se não existir é criado. se existir os dados são inseridos
+* 		por cima dos dados anteriores. Tendo efeitos prejudiciais.
+*	"w+" -> se não existir é criado. se existir é apagado e criado
+*		um novo com o mesmo nome.  
+*	"a+" -> se não existir é criado. se existir os novos dados são
+*		colocados a partir do final do arquivo.
+*__________________________________________________________________	
+* Para processar o arquivo em modo binário, em vez de 
+*   texto basta, acrescentar um "b" ao modo de abertura.
+*	
+*	assim: ("rb", "wb", "ab", "a+b", "w+b", "a+b")	
+*
+*/
+	FILE *fp;
+      
+      // "fopen" retorna o endereço da estrutura criada
+      // ou NULL
+      if ( (fp = fopen("${1:ficheiro.txt}", "${2:w}")) == NULL) {
+        printf("-----> Abertura de arquivo mal sucedida! <-----\n");
+        exit(0);
+      }else{
+      	printf("-----> Abertura de arquivo bem sucedida! <-----\n");
+      }
+   
+
+   fprintf(fp, "Escreve uma frase no Aquivo\n");
+
+// ler arquivo caracter a caracter
+// variavel é do tipo int que representa
+// os caracteres ASCI existentes, retorna EOF caso chegue ao fim
+int ch;
+while( (ch = fgetc(fp)) != EOF ){
+      putchar(ch); // apenas escreve no programa e não no arquivo
+    }
+
+// fechar o arquivo...
+fclose(fp);
+
+
+printf("Arquivo fechado ...Adeus!!\n");
+
+
+/********************
+* outras funções de manipulação de ficheiros:
+*   fputc(ch, file_out) -> retorna o caracter para o arquivo em 
+*                           caso de sucesso ou EOF
+*   
+*  funções de saída e entrada formatadas só podem ser usadas
+* quando os aquivos são abertos em modo de texto apenas
+*   
+*   fscanf(file_in, "%c", &ch);
+*   fprintf(file_out, "%c", ch);
+*
+********************/
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_arquivos_c</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

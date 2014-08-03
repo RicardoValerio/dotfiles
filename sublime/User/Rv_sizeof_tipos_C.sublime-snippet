@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+
+	printf("Int - %d \n",sizeof(int));
+	printf("Unsigned Int - %d \n",sizeof(unsigned int));
+	printf("Signed Int - %d \n",sizeof(signed int));
+	printf("Short Int - %d \n",sizeof(short int));
+	printf("Unsigned Short Int - %d \n",sizeof(unsigned short int));
+	printf("Long Int - %d \n",sizeof(long int));
+	printf("Long Long Int - %d \n",sizeof(long long int));
+	printf("Float - %d \n",sizeof(float));
+	printf("Double - %d \n",sizeof(double));
+	printf("Long Double - %d \n",sizeof(long double));
+	printf("Char - %d \n",sizeof(char));
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_sizeof_tipos_C</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

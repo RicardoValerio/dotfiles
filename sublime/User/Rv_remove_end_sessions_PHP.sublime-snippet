@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+
+// REMOVE A SESSION VARIABLE ////////////////////////////
+
+unset( \$_SESSION['cart'] );
+
+// REMOVE ALL SESSION VARIABLES AND END A SESSION///////////////////////
+
+\$_SESSION = array();
+session_destroy();  // returns TRUE if successful and FALSE otherwise.
+
+// DELETE A SESSION COOKIE FROM THE BROWSER ///////////////////////////
+
+\$name = session_name();
+\$expire = strtotime('-1 year');
+\$params = session_get_cookie_params();
+\$path = \$params['path'];
+\$domain = \$params['domain'];
+\$secure = \$params['secure'];
+\$httponly = \$params['httponly'];
+
+setcookie( \$name, '', \$expire, \$path, \$domain, \$secure, \$httponly );
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_remove_end_sessions_PHP</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

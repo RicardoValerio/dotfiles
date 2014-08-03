@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+
+\$sql = "SELECT ${2:}";
+
+
+
+\$result_set = \$connection->query(\$sql); //\$result_set fica um PDOStatment Object
+
+//metodo fetch() retorna uma unica linha e os valores podem ser acedidos
+//chamado os nomes da colunas ou de forma numerica
+// \$row['index_associativo'] ou \$row[index_numerico]
+\$row = \$result_set->fetch();   // \$row fica um array da primeira linha da condiçao
+
+// DEBUG da linha retornada
+//echo '<pre>';
+//print_r(\$row);
+//echo '</pre>';
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_PDO_Select_uma_linha</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

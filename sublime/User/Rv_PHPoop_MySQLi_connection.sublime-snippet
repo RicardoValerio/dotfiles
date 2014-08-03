@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+\$mysql_server = "${1:localhost}";
+\$mysql_user = "${2:root}";
+\$mysql_password = "${3}";
+\$mysql_db = "${4}";
+
+\$db_con = new mysqli(\$mysql_server, \$mysql_user, \$mysql_password, \$mysql_db);
+if (\$db_con->connect_errno) {
+	printf("Connection failed: %s \n", \$db_con->connect_error);
+	exit();
+}
+\$db_con->set_charset("${5:utf8}");
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_PHPoop_MySQLi_connection</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

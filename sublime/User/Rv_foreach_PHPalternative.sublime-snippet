@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+foreach(\$${1:array} as \$key${2: => \$value}): 
+  ${3://do something} 
+?>
+<?php
+endforeach; 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_foreach_PHPalternative</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

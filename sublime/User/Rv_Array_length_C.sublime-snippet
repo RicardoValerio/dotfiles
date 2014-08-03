@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+
+${1:#define ARRAY_LENGTH(x) ( sizeof(x) / sizeof(x[0]) )}
+//	int numberOfElements = ARRAY_LENGTH(nome_da_variavel_array);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_Array_length</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

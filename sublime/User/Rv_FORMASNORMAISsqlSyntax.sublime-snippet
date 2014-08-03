@@ -1,0 +1,106 @@
+<snippet>
+	<content><![CDATA[
+
+
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////////// 1FN //////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+A 1FN diz-nos que numa alinha de uma tabela, cada coluna tem de conter apenas um único valor (inclusive pode ser o valor NULL) e que esse valor deve ser atómico, isto é, não pode ser decomposto noutro conjunto de valores. Também diz que uma linha deve ser identificado com uma chave primária (atributo que identifica uma linha unívocamente).
+
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////////// 2FN //////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+A 2FN só se verifica no caso de tabelas com Chave Composta.
+Por outras palavras: A 2FN só é aplicável a entidades cuja chave primária contenha mais do que um atributo, isto é, estamos perante uma Chave Composta.
+
+A 2FN diz-nos que:
+se um atributo depende apenas de uma parte da chave Composta (ou seja, não depende de todas as colunas que constituem a chave), então esse atributo deve ser colocado noutra tabela.
+
+_______________________________________________________
+metaforicamente falando a 2FN faz a questão:
+
+"Posso eu encontrar algum valor nesta linha que não dependa de algum atributo da Chave Composta?!?" Se sim, algo ainda não está bem!
+
+
+exemplo:
+
+__________________________________________________________________________
+| course PK |  date PK  |   CourseTitle    | room | capacity | available |
+|===========|===========|==================|======|==========|===========|
+| SQL101    | 3/1/2013  | SQL FUNDAMENTALS | 4A   |       12 |         4 |
+|-----------|-----------|------------------|------|----------|-----------|
+| DB202     | 3/1/2013  | DATABASE DESIGN  | 7B   |       14 |         7 |
+|-----------|-----------|------------------|------|----------|-----------|
+| SQL101    | 4/1/2013  | SQL FUNDAMENTALS | 7B   |       14 |        10 |
+|-----------|-----------|------------------|------|----------|-----------|
+| SQL101    | 5/28/2013 | SQL FUNDAMENTALS | 12A  |        8 |         8 |
+|-----------|-----------|------------------|------|----------|-----------|
+| CS200     | 4/15/2013 | C PROGAMMING     | 4A   |       12 |        11 |
+|-----------|-----------|------------------|------|----------|-----------|
+
+
+os atributos COURSE e DATE constituem a Chave Composta.. e então fazendo a pergunta verificamos que COURSETITLE não tem conecção com o atributo DATE...e assim a solução passa por criar uma nova tabela chamada COURSE, com os atributos COURSEID e TITLE.
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// 3FN //////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+De acordo com a 3FN, se uma relação obedece a esta forma, então, todos os atributos que não são chave são funcionalmente dependentes apenas e só da chave..
+
+Por outras palavras:
+
+Nenhum "non-key field-value" (isto é, um atributo que não constitua a chave primária (seja composta ou não)) é dependente de outro non-key field-value
+
+_______________________________________________________
+metaforicamente falando a 3FN faz a questão:
+
+"Posso eu encontrar algum valor que dependa (que se repita) de outro valor, sendo estes não-atributos da Chave Primária, isto é, que não façam parte dela?!?!" Se sim, algo ainda não está bem!
+
+
+exemplo:
+
+			EVENTS
+____________________________________________________________
+| course PK - FK |  date PK  | room | capacity | available |
+|================|===========|======|==========|===========|
+| SQL101         | 3/1/2013  | 4A   |       12 |         4 |
+|----------------|-----------|------|----------|-----------|
+| DB202          | 3/1/2013  | 7B   |       14 |         7 |
+|----------------|-----------|------|----------|-----------|
+| SQL101         | 4/1/2013  | 7B   |       14 |        10 |
+|----------------|-----------|------|----------|-----------|
+| SQL101         | 5/28/2013 | 12A  |        8 |         8 |
+|----------------|-----------|------|----------|-----------|
+| CS200          | 4/15/2013 | 4A   |       12 |        11 |
+|----------------|-----------|------|----------|-----------|
+	||
+	||
+____||____________________________	
+| courseID PK |      title       |
+|-------------|------------------|
+| SQL101      | SQL FUNDAMENTALS |
+|-------------|------------------|
+| DB202       | DATABASE DESIGN  |
+|-------------|------------------|
+| CS200       | C PROGRAMMING    |
+|-------------|------------------|
+
+
+Os campos ROOM e CAPACITY (que não são atributos da Chave primária, ou seja, são non-key fields) estão dependentes um do outro..isto é,..repetem-se ao longo das linhas com os mesmos valores..e quando assim é, é necessário criar mais uma tabela...
+
+
+
+
+
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_FORMASNORMAISsqlSyntax</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

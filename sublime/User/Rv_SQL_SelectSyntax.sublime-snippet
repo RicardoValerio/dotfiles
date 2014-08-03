@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+
+SELECT [campo1, campo2, etc ou *]
+FROM [tabela1, tabela2, etc]
+[WHERE condição]
+[GROUP BY... ]
+[HAVING... ]
+[ORDER BY CAMPO1 [ASC|DESC], CAMPO2 [ASC|DESC],... ]
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_SQL_SelectSyntax</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+
+
+\$sql = 'SELECT * FROM ${2:}';
+
+//o metodo query() retorna o result_set ou FALSE
+if (\$result_set = \$connection->query(\$sql)) {
+        //o foreach realiza o metodo fetch() automaticamente por cada linha
+        foreach (\$result_set as \$coluna) {
+            echo \$coluna['${3:index_num_OU_assoc}'] . '<br />';
+            echo \$coluna['${4:index_num_OU_assoc}'] . '<br /><br />';
+        }
+    
+}else{
+    
+    echo 'Algo de muito errado aconteceu!';    
+    
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_PDO_select_todas_as_linhas</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

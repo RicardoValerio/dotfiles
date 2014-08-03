@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+/////////////////////////////////// FUNÇÂO AJAX INTACTA /////////////////////////////////////
+  var xmlhttp;
+
+  function loadXMLDoc(method,url,cfunc)
+  {
+        if (window.XMLHttpRequest){
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+        }
+        else{
+          // code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange=cfunc;
+        xmlhttp.open(method,url,true);
+        xmlhttp.send();
+  }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////// FUNÇÂO QUE CHAMA A FUNÇÂO AJAX INTACTA NO SEU INTERIOR ////////////////////
+  function Rv_ajax_Function()
+  {
+    loadXMLDoc( "${1:METHOD}","${2:FICHEIRO.php}",function()
+    {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+        // onde quero alterar o conteúdo
+        // document.getElementById("${3:MYID}").innerHTML=xmlhttp.responseText;
+      }
+    });
+  }
+${4:}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_ajax_javascript</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

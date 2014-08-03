@@ -1,0 +1,51 @@
+<snippet>
+	<content><![CDATA[
+
+/***************	#IF, #ELIF, #ELSE, #ENDIF	*********************
+// as directivas #if e #endif são obrigatórias, enquanto que
+// elif e #else são opcionais.
+
+// o numero de #elifs depende das necessidades do programador
+
+#if condição1
+	instruções1
+
+#elif condição2
+	instruções2
+#elif condição3
+	instruções3
+
+#else
+	instruções_padrão
+#endif
+**************************************************************/
+
+
+/*********************	#IFDEF, #IFNDEF, #UNDEF	**************************
+	#ifdef -> verifica se um determinado símbolo ESTÁ DEFINIDO.
+	#ifndef -> verifica se um determinado símbolo NÃO está DEFINIDO.
+	#undef -> RETIRA a DEFINIÇÃO de um símbolo.
+
+**********************************************************************/
+
+/*********************	OPERADOR defined()	**************************
+	O operador defined(), quando integrado num #if, funciona de forma 
+	semelhante ao #ifdef.
+As seguintes directivas são semelhantes:
+
+	1)	#ifdef SIMBOLO
+	2) 	#if defined(SIMBOLO)
+
+No entanto a existência deste operador permite a utilização de expressões 
+mais complexas por parte do pré-processador:
+
+	#if defined(ESTE_SIMBOLO) && !defined(OUTRO_SIMBOLO)
+
+**********************************************************************/
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_preProcessorCondicional</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

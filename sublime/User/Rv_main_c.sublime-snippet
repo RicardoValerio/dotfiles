@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/******************************************************
+*		Typedef's, Struct's e Variáveis Globais
+*******************************************************/
+
+/******************************************************
+*				Protótipos de funções
+*******************************************************/
+
+
+
+/******************************************************
+*				Função Principal
+*******************************************************/
+
+int main(int argc, const char * argv[], char * sys_vars[])
+{
+	${1:printf("Hello World!\n");}
+	return EXIT_SUCCESS;
+}
+
+
+/******************************************************
+*				Funções do Programa
+*******************************************************/
+
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Rv_main</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>
