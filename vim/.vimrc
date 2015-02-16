@@ -279,6 +279,7 @@ if count(g:vimified_packages, 'color')
     Bundle 'chriskempson/base16-vim'
     Bundle 'Elive/vim-colorscheme-elive'
     Bundle 'zeis/vim-kolor'
+    Bundle 'toyamarinyon/vim-swift'
 
     " During installation the molokai colorscheme might not be avalable
     if filereadable(globpath(&rtp, 'colors/molokai.vim'))
@@ -317,10 +318,10 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " You want to be part of the gurus? Time to get in serious stuff and stop using
 " arrow keys.
-noremap <left> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <right> <nop>
+" noremap <left> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
+" noremap <right> <nop>
 
 " Yank from current cursor position to end of line
 map Y y$
