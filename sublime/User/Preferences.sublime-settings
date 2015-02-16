@@ -2,7 +2,6 @@
 	"auto_id_class": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/MultiLang/MultiLanger-Dark_Inverted_RV.tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
@@ -12,12 +11,13 @@
 	"folder_exclude_patterns":
 	[
 	],
-	"font_size": 11,
+	"font_size": 17.0,
+	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage",
-		"LiveReload"
+		"Arduino-like IDE"
 	],
 	"match_brackets_angle": true,
 	"reveal-on-activate": true,
