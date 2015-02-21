@@ -1,2 +1,4 @@
 [
+	{ "keys": ["super+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["super+right"], "command": "move_to", "args": {"to": "eol", "extend": false} }
 ]
