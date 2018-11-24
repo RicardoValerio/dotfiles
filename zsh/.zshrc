@@ -7,6 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="junkfood"
 
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -45,7 +46,19 @@ ZSH_THEME="junkfood"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    colorize
+    extract
+    python
+    pip
+    pep8
+    pyenv
+    pylint
+    brew
+    sprunge
+    zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,23 +89,51 @@ export PATH=$PATH:"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="sublime ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
-
-export PATH=$PATH:/Users/RicardoValerio/phalcon-devtools
-export PTOOLSPATH=/Users/RicardoValerio/phalcon-devtools
-
-alias htdocs=/Applications/mampstack-5.5.18-0/apache2/htdocs
-alias phalcon-models="phalcon all-models --relations"
-alias composer='function _composer(){ php /usr/bin/composer.phar $1; };_composer'
-
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzshconfig="subl ~/.oh-my-zsh"
 #unalias run-help
 #autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-source "$HOME/.antigen/antigen.zsh"
+###################################################################
+#       My aliases
+###################################################################
 
+alias RV-LAB="cd ~/RV-LAB"
+alias EXCEL_TO_PY_TO_SQL="EX2PY2SQL"
+
+
+#-------- Global Alias {{{
+#------------------------------------------------------
+# Automatically Expanding Global Aliases (Tab Key to expand)
+# references: http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+globalias() {
+  if [[ $LBUFFER =~ '[A-Z0-9]+$' ]]; then
+    zle _expand_alias
+    zle expand-word
+  fi
+  zle self-insert
+}
+zle -N globalias
+bindkey " " globalias                 # space key to expand globalalias
+# bindkey "^ " magic-space            # control-space to bypass completion
+bindkey "^[[Z" magic-space            # shift-tab to bypass completion
+bindkey -M isearch " " magic-space    # normal space during searches
+
+
+# http://www.zzapper.co.uk/zshtips.html
+alias -g EX2PY2SQL='python3 ~/RV-LAB/EXCEL/excel_to_python_to_SQL_to_db.py \
+--excel_filename test_file_for_data_entry_automation_2.xlsm \
+--sheet_name "Orders" \
+--sheet_range "B2:U9995" \
+--host_name "localhost" \
+--username "root" \
+--password "bazinga" \
+--database_name "data_entry_automation_dev" \
+--table_name "orders" \
+--columns "order_id" "order_der" "etc" \'
+
+
+#}}}
