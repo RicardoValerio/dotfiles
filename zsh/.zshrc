@@ -124,8 +124,8 @@ bindkey -M isearch " " magic-space    # normal space during searches
 
 
 # http://www.zzapper.co.uk/zshtips.html
-alias -g EX2PY2SQL='python3 ~/RV-LAB/EXCEL/excel_to_python_to_SQL_to_db.py \
---excel_filename test_file_for_data_entry_automation_2.xlsm \
+alias -g EX2PY2SQL='python3 ~/RV-LAB/Excel/excel_to_python_to_SQL_to_db.py \
+--excel_filename ~/RV-LAB/Excel/test_file_for_data_entry_automation_2.xlsm \
 --sheet_name "Orders" \
 --sheet_range "B2:U9995" \
 --host_name "localhost" \
@@ -133,7 +133,7 @@ alias -g EX2PY2SQL='python3 ~/RV-LAB/EXCEL/excel_to_python_to_SQL_to_db.py \
 --password "bazinga" \
 --database_name "data_entry_automation_dev" \
 --table_name "orders" \
---columns "order_id" "order_der" "etc" \'
+--columns "order_id" "order_date" "etc" \'
 
 
 #}}}
